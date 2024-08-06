@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block start %}
+    
+   <h1> This is Django Server</h1>
+   <a href="{% url 'about' %}">About</a> |
+   <a href="{% url 'contact' %}">Contact</a>
+   
+   <table class="container">
+      
+      <tr>
+         <th>S No.</th>
+         <th>Name</th>
+         <th>Age</th>
+      </tr>
+
+
+      {%  for person in people %}
+      <tr>
+         <td>{{forloop.counter}}</td>
+         <td>{{person.name}}</td>
+         <td>{{person.age}}</td>
+      </tr>
+      {% endfor %}
+   
+   </table> 
+
+{% endblock %} 
